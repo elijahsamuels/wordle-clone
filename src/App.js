@@ -5,16 +5,21 @@ function App() {
 
   useEffect(() => {
     fetch("http://localhost:3001/solutions")
-		.then((res) => res.json())
-    // .then((json) => {console.log(json);});
-    .then(json => setSolution(json));
-  }, []);
-console.log(solution);
-  return (
-    <div className="App">
-      <h1>Wordle Clone</h1>
-    </div>
-  );
+      .then((res) => res.json())
+      // .then(json => setSolution(json));
+      .then((json) => {
+        const randomSolution = json[Math.floor(Math.random() * json.length)]
+				setSolution(randomSolution.word);
+      });
+		}, [setSolution]);
+		
+    return (
+      <div className="App">
+        <h1>Wordle Clone</h1>
+				{solution && <div>The solution is: {solution}</div>}
+
+      </div>
+    );
 }
 
 export default App;
