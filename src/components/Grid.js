@@ -4,7 +4,6 @@ import Row from "./Row";
 function Grid({ currentGuess, guesses, turn }) {
   return (
     <div>
-      Grid
       {guesses.map((guess, index) => {
 				if (turn === index) {
 					return <Row key={index} currentGuess={currentGuess}/>;
