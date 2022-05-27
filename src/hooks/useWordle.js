@@ -71,7 +71,6 @@ const useWordle = (solution) => {
 					return
 				}
 			})
-			console.log(newKeys)
 			return newKeys
 		})
 
@@ -82,21 +81,17 @@ const useWordle = (solution) => {
     if (key === "Enter") {
       // submit word
       if (turn > 5) {
-        console.log("no more guesses available");
         return;
       }
       if (history.includes(currentGuess)) {
-        console.log("already tried this word", currentGuess);
         return;
       }
       if (currentGuess.length !== 5) {
-        console.log("word is not long enough");
         return;
       }
-      // if (currentGuess is actual word from api) {}
+      // if (!officalScrabble5LetterWordArray.includes(currentGuess)) { don't submit word }
 
       const formatted = formatGuess();
-      console.log(formatted);
       addNewGuess(formatted);
     }
 
