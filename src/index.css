@@ -35,36 +35,94 @@ h1 {
 }
 
 .row > div {
-	display: block;
-	width: 60px;
-	height: 60px;
-	border: 1px solid #bbb;
-	margin: 4px;
-	text-align: center;
-	line-height: 60px;
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 2.5em;
-	color: black;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #bbb;
+  margin: 4px;
+  text-align: center;
+  line-height: 60px;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  font-size: 2.5em;
+	/* color: black; */
 	border-radius: 3px;
 }
 
 .row > div.green {
-	background-color: #6baa64;
-	border-color: #b5d4b1;
-	color: white;
+	--background: #6baa64;
+	--border-color: #b5d4b1;
+	/* color: white; */
+	animation: flip 0.5s ease forwards;
 
 }
 .row > div.yellow {
-	background-color: #cab458;
-	border-color: #e4d9ab;
-	color: white;
+	--background: #cab458;
+	--border-color: #e4d9ab;
+	/* color: white; */
+	animation: flip 0.5s ease forwards;
 
 }
 .row > div.grey {
-	background-color: #787c7e;
-	border-color: #bbbdbe;
-	color: white;
-
+	--background: #787c7e;
+	--border-color: #bbbdbe;
+	/* color: white; */
+	animation: flip 0.5s ease forwards;
 }
 
+.row > div:nth-child(2) {
+	animation-delay: 0.2s;
+}
+.row > div:nth-child(3) {
+	animation-delay: 0.4s;
+}
+.row > div:nth-child(4) {
+	animation-delay: 0.6s;
+}
+.row > div:nth-child(5) {
+	animation-delay: 0.8s;
+}
+
+.row.current > div.filled {
+	animation: bounce 0.2s ease-in-out forwards;
+}
+
+/* animations */
+@keyframes flip {
+	0% {
+		transform: rotateX(0);
+		background: #787c7e;
+		border-color: #bbbdbe;
+		}
+	45% {
+		transform: rotateX(90deg);
+		background: #787c7e;
+		border-color: #bbbdbe;
+		}
+	55% {
+		transform: rotateX(90deg);
+		background: var(--background);
+		border-color: var(--border-color);
+		color: white;
+	}
+	100% {
+		transform: rotateX(0deg);
+		background: var(--background);
+		border-color: var(--border-color);
+		color: white;
+	}
+}
+
+@keyframes bounce {
+	0%{
+		transform: scale(1);
+		border-color: #ddd;
+	}
+	50%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1);
+		border-color: #333;
+	}
+}
