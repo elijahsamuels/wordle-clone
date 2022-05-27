@@ -6,7 +6,10 @@ function Grid({ currentGuess, guesses, turn }) {
     <div>
       Grid
       {guesses.map((guess, index) => {
-        return <Row key={index}/>;
+				if (turn === index) {
+					return <Row key={index} currentGuess={currentGuess}/>;
+				}
+        return <Row key={index} guess={guess}/>;
       })}
     </div>
   );
