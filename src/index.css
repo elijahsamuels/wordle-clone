@@ -15,9 +15,9 @@ code {
 body {
 	text-align: center;
 	font-size: 1em;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 	margin: 0;
-	background-color: #8c8c8c;
+	/* background-color: #8c8c8c; */
 }
 
 h1 {
@@ -45,7 +45,26 @@ h1 {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 2.5em;
-	border-radius: 5px;
+	color: black;
+	border-radius: 3px;
 }
 
+.row > div.green {
+	background-color: #6baa64;
+	border-color: #b5d4b1;
+	color: white;
+
+}
+.row > div.yellow {
+	background-color: #cab458;
+	border-color: #e4d9ab;
+	color: white;
+
+}
+.row > div.grey {
+	background-color: #787c7e;
+	border-color: #bbbdbe;
+	color: white;
+
+}
 
