@@ -4,6 +4,14 @@ import Wordle from "./components/Wordle";
 function App() {
   const [solution, setSolution] = useState(null);
 
+  // useEffect(() => {
+
+  //   fetch("https://scrabble.p.rapidapi.com/hello/definitions", options)
+  //     .then((response) => response.json())
+  //     .then((response) => console.log(response))
+  //     .catch((err) => console.error(err));
+  // }, []);
+
   useEffect(() => {
     fetch("http://localhost:3001/solutions")
       .then((res) => res.json())
