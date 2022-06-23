@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
+import wordsObject from "../wordsObject";
 
 function Keypad({ usedKeys }) {
   const [letters, setLetters] = useState(null);
 
-  useEffect(() => {
-    fetch("http://localhost:3001/letters")
-      .then((response) => response.json())
-      .then((json) => {
-        setLetters(json);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/letters")
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       setLetters(json);
+  //     });
+  // }, []);
+
+	useEffect(() => {
+		setLetters(wordsObject.letters)
+	}, [setLetters])
 
   return (
     <div className="keypad">
