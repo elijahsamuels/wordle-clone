@@ -1,4 +1,4 @@
-export default {
+const wordsObject = {
   solutions: [
     { word: "Abuse", id: 1 },
     { word: "Adult", id: 2 },
@@ -81,4 +81,6 @@ export default {
     { key: "N" },
     { key: "M" },
   ],
-};
+}
+
+export default wordsObject
